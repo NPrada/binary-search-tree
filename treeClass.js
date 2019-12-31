@@ -10,11 +10,7 @@ class BST {
   constructor(){
     this.root = null
   }
-
-  init(val){
-    this.root = new Node(val)
-  }
-
+  
   //add value to the tree
   add(value){
     const node = this.root
