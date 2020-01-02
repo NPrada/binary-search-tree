@@ -78,6 +78,53 @@ class BST {
 
     return false
   }
+
+
+  //search algorithms
+  //depth first search
+  //in order (left, root right)
+  dfsInOrder(){
+    const result = []
+    
+    const traverse = node => {
+      if(node.left) traverse(node.left)
+      result.push(node.value)
+      if(node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
+
+    return result
+  }
+  //pre order (root, left right)
+  dfsPreOrder(){
+    const result = []
+
+    const traverse = node => {
+      result.push(node.value)
+      if(node.left) traverse(node.left)
+      if(node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
+
+    return result
+  }
+  //post order (left, right, root)
+  dfsPostOrder(){
+    const result = []
+
+    const traverse = node => {
+      if(node.left) traverse(node.left)
+      if(node.right) traverse(node.right)
+      result.push(node.value)
+    }
+
+    traverse(this.root)
+
+    return result
+  }
+
 }
 
 module.exports = BST;

@@ -6,7 +6,7 @@ function run(){
   tree.add(8)
   tree.add(2)
   tree.min()
-  console.log(tree.contains(2))
+  console.log(tree.dfsPreOrder())
 }
 
 run()
