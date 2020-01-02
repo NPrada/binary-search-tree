@@ -60,6 +60,24 @@ class BST {
 
     return node.value
   }
+
+  contains(value){
+    let node = this.root
+
+    while(node){
+      if(node.value === value){
+        return true
+      }
+
+      if(node.value < value){
+        node = node.right
+      } else if(node.value > value){
+        node = node.left
+      }
+    }
+
+    return false
+  }
 }
 
 module.exports = BST;
