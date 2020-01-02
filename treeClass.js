@@ -125,6 +125,25 @@ class BST {
     return result
   }
 
+  //breath first search
+  bfs(){
+    const result = []
+
+    let queue = [this.root]
+
+    while (queue.length) {
+      queue.forEach(node => {
+        queue.shift()
+        result.push(node.value)
+        if(node.left) queue.push(node.left)
+        if(node.right) queue.push(node.right)
+      })
+    }
+
+    return result
+
+  }
+
 }
 
 module.exports = BST;
