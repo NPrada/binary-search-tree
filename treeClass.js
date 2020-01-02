@@ -39,6 +39,27 @@ class BST {
     }
     addNode(node)
   }
+
+  min(){
+    let node = this.root
+    
+    while(node.left){
+      node = node.left
+    }
+
+    return node.value
+    
+  }
+
+  max(){
+    let node = this.root
+    
+    while(node.right){
+      node = node.right
+    }
+
+    return node.value
+  }
 }
 
 module.exports = BST;
